@@ -1,0 +1,144 @@
+/* 🔹 Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Arial", sans-serif;
+}
+
+/* 🔹 Navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #000;
+    padding: 15px 40px;
+    height: 100px;
+
+}
+
+.navbar .logo a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 40px;
+    font-weight: bold;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+}
+
+.nav-links li {
+    padding: 0 15px;
+}
+
+.nav-links a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 30px;
+}
+
+.nav-links a.active {
+    color: #a88ff6; /* Highlight active page */
+}
+
+/* 🔹 Contact Section */
+.contact-container {
+    max-width: 900px;
+    margin: 50px auto;
+    padding: 20px;
+    text-align: center;
+    background: url('https://wallpaperaccess.com/full/5651990.jpg') no-repeat center center/cover;
+    box-shadow: 1px 1px 20px 20px #333;
+}
+
+.contact-container h2 {
+    font-size: 32px;
+    margin-bottom: 10px;
+    color: #000;
+    font-weight: 800;
+}
+
+.contact-container p {
+    font-size: 20px;
+    color: #ffffff;
+    margin-bottom: 30px;
+    font-weight: 800;
+}
+
+/* 🔹 Contact Content */
+.contact-content {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+/* 🔹 Contact Info */
+.contact-info {
+    flex: 1;
+    background: #f5f5f5;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: left;
+    box-shadow: 1px 1px 20px 8px #ffffff;
+}
+.contact-info p{
+    color: #000;
+
+}
+/* 🔹 Contact Form */
+.contact-form {
+    flex: 1;
+    background: #f5f5f5;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 1px 1px 20px 8px #ffffff;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 2px solid #000;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+/* 🔹 Submit Button */
+button {
+    background-color: #a88ff6;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px;
+    width: 100%;
+}
+
+button:hover {
+    background-color: #824ff7;
+}
+
+/* 🔹 Google Maps */
+.map-container {
+    margin-top: 20px;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+/* 🔹 Responsive Design */
+@media (max-width: 768px) {
+    .contact-content {
+        flex-direction: column;
+    }
+
+    .contact-info,
+    .contact-form {
+        width: 100%;
+        text-align: center;
+    }
+}

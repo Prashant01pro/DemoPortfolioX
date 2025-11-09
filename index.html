@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Prashant Kumar">
+    <meta name="description"
+        content="Portfolio of Prashant Kumar showcasing web development projects and blog articles.">
+    <meta name="keywords" content="web development, HTML, CSS, JavaScript, portfolio, projects">
+    <meta name="robots" content="index, follow">
+    <meta name="google-site-verification" content="YOUR_VERIFICATION_CODE">
+    <link rel="canonical" href="https://yourwebsite.com">
+
+    <!-- Open Graph (Facebook, LinkedIn) -->
+    <meta property="og:title" content="Prashant Kumar - Web Developer">
+    <meta property="og:description"
+        content="Portfolio of Prashant Kumar showcasing web development projects and blog articles.">
+    <meta property="og:image" content="https://yourwebsite.com/preview-image.jpg">
+    <meta property="og:url" content="https://yourwebsite.com">
+    <meta property="og:type" content="website">
+
+    <!-- Twitter Card (Twitter/X) -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Prashant Kumar - Web Developer">
+    <meta name="twitter:description"
+        content="Portfolio of Prashant Kumar showcasing web development projects and blog articles.">
+    <meta name="twitter:image" content="https://yourwebsite.com/preview-image.jpg">
+    <meta name="twitter:site" content="@yourTwitterHandle">
+
+    <!-- Helps prevent clickjacking attacks and ensures proper isolation. -->
+    <meta http-equiv="Cross-Origin-Opener-Policy" content="same-origin">
+
+    <script type="application/ld+json">
+        {
+          "@context": "https://schema.org",
+          "@type": "WebSite",
+          "name": "Prashant Kumar - Web Developer",
+          "url": "https://yourwebsite.com"
+        }
+        </script>
+
+    <!-- local favicon -->
+    <!-- <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+     -->
+    <!-- google favicon -->
+    <!-- <link rel="icon" type="image/png" sizes="32x32" href="https://www.google.com/s2/favicons?sz=32&domain=google.com"> -->
+    <!-- <link rel="icon" type="image/png" sizes="32x32" href="https://api.iconify.design/emojione-v1:briefcase.svg"> -->
+    <!-- <link rel="icon" type="image/svg+xml"
+        href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDIwIDIwIj48cGF0aCBmaWxsPSJjdXJyZW50Q29sb3IiIGQ9Ik00IDVILjc4Yy0uMzcgMC0uNzQuMzItLjY5Ljg0bDEuNTYgOS45OVMzLjUgOC40NyAzLjg2IDYuN2MuMTEtLjUzLjYxLS43Ljk4LS43SDEwcy0uNy0yLjA4LS43Ny0yLjMxQzkuMTEgMy4yNSA4Ljg5IDMgOC40NSAzSDUuMTRjLS4zNiAwLS43LjIzLS44LjY0QzQuMjUgNC4wNCA0IDUgNCA1bTQuODggMGgtNHMuNDItMSAuODctMWgyLjEzYy40OCAwIDEgMSAxIDFNMi42NyAxNi4yNWMtLjMxLjQ3LS43Ni43NS0xLjI2Ljc1aDE1LjczYy41NCAwIC45Mi0uMzEgMS4wMy0uODNjLjQ0LTIuMTkgMS42OC04LjQ0IDEuNjgtOC40NGMuMDctLjUtLjMtLjczLS42Mi0uNzNIMTZWNS41M2MwLS4xNi0uMjYtLjUzLS42Ni0uNTNoLTMuNzZjLS41MiAwLS44Ny41OC0uODcuNThMMTAgN0g1LjU5Yy0uMzIgMC0uNjMuMTktLjY5LjVjMCAwLTEuNTkgNi43LTEuNzIgNy4zM2MtLjA3LjM3LS4yMi45OS0uNTEgMS40Mk0xNS4zOCA3SDExcy41OC0xIDEuMTMtMWgyLjI5Yy43MSAwIC45NiAxIC45NiAxIi8+PC9zdmc+"> -->
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+
+    <link rel="icon" type="image/svg+xml"
+        href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDIwIDIwIj48cGF0aCBmaWxsPSIjZmZmIiBkPSJNNCA1SC43OGMtLjM3IDAtLjc0LjMyLS42OS44NGwxLjU2IDkuOTlTMy41IDguNDcgMy44NiA2LjdjLjExLS41My42MS0uNy45OC0uN0gxMHMtLjctMi4wOC0uNzctMi4zMUM5LjExIDMuMjUgOC44OSAzIDguNDUgM0g1LjE0Yy0uMzYgMC0uNy4yMy0uOC42NEM0LjI1IDQuMDQgNCA1IDQgNW00Ljg4IDBoLTRzLjQyLTEgLjg3LTFoMi4xM2MuNDggMCAxIDEgMSAxTTIuNjcgMTYuMjVjLS4zMS40Ny0uNzYuNzUtMS4yNi43NWgxNS43M2MuNTQgMCAuOTItLjMxIDEuMDMtLjgzYy40NC0yLjE5IDEuNjgtOC40NCAxLjY4LTguNDRjLjA3LS41LS4zLS43My0uNjItLjczSDE2VjUuNTNjMC0uMTYtLjI2LS41My0uNjYtLjUzaC0zLjc2Yy0uNTIgMC0uODcuNTgtLjg3LjU4TDEwIDdINS41OWMtLjMyIDAtLjYzLjE5LS42OS41YzAgMC0xLjU5IDYuNy0xLjcyIDcuMzNjLS4wNy4zNy0uMjIuOTktLjUxIDEuNDJNMTUuMzggN0gxMXMuNTgtMSAxLjEzLTFoMi4yOWMuNzEgMCAuOTYgMSAuOTYgMSIvPjwvc3ZnPg==">
+
+    <!-- <link rel="stylesheet" href="styles.css"> -->
+    <link rel="preload" href="styles.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Leckerli+One&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Teko:wght@300..700&display=swap"
+        rel="stylesheet">
+    <title>✦ My Portfolio | Web Development ✦</title>
+</head>
+
+<body>
+    <header>
+        <nav id="nav">
+            <div class="rightdiv">
+                <img src="https://static.vecteezy.com/system/resources/previews/009/645/485/non_2x/portfolio-icon-logo-illustration-folder-symbol-template-for-graphic-and-web-design-collection-free-vector.jpg"
+                    alt="portfolio logo">
+                <h1>My Portfolio</h1>
+            </div>
+            <div class="leftdiv">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html" target="_blank">About</a></li>
+                    <li><a href="contact.html" target="_blank">ContactUs</a></li>
+                    <li>
+                        <input type="text" id="searchInput" class="search-input" aria-label="Search"
+                            placeholder="Search....      🔍">
+                    </li>
+
+                </ul>
+            </div>
+            <div class="linkicons">
+                <a href="https://github.com/yourusername" target="_blank"><i class='bx bxl-github'></i></a>
+                <a href="https://www.youtube.com/c/yourchannel" target="_blank"><i class='bx bxl-youtube'></i></a>
+                <a href="https://www.linkedin.com/in/yourprofile" target="_blank"><i
+                        class='bx bxl-linkedin-square'></i></a>
+                <i class='bx bx-menu'></i>
+            </div>
+
+            <!-- <div class="sidediv">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html" target="_blank">About</a></li>
+                <li><a href="contact.html" target="_blank">ContactUs</a></li>
+            </ul>
+
+            <i class='bx bx-x'></i>
+            </div> -->
+
+
+            <div class="sidediv">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html" target="_blank">About</a></li>
+                    <li><a href="contact.html" target="_blank">Contact Us</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <!-- Close icon -->
+                    <i class='bx bx-x'></i>
+                </ul>
+
+
+                <!-- Search bar -->
+                <div class="search-bar">
+                    <input type="text" placeholder="Search...">
+                    <button>🔍</button>
+                </div>
+
+                <!-- Profile or user icon -->
+                <div class="profile-section">
+                    <a href="profile.html">
+                        <i class='bx bx-user'></i> Profile
+                    </a>
+                </div>
+
+                <!-- Theme toggle -->
+                <div class="theme-toggle">
+                    <label>
+                        <input type="checkbox" id="theme-switch">
+                        <span class="slider"></span> Light Mode
+                    </label>
+                </div>
+
+                <!-- Social media links -->
+                <div class="social-links">
+                    <a href="#"><i class='bx bxl-facebook'></i></a>
+                    <a href="#"><i class='bx bxl-twitter'></i></a>
+                    <a href="#"><i class='bx bxl-instagram'></i></a>
+                </div>
+
+
+            </div>
+
+        </nav>
+    </header>
+    <main>
+        <div id="portfolioheading">
+            <h2>About Myself</h2>
+        </div>
+        <div class="myselfdiv">
+            <div class="aboutmyself">
+                <h3>Crafting Digital Experiences</h3>
+                <p>Welcome to the portfolio website of a skilled developer. Dive into the world of HTML, CSS, and
+                    JavaScript as we showcase cutting-edge design and seamless interactivity. With plans for expansion
+                    on the horizon, we are dedicated to captivating clients with innovative features and
+                    functionalities.</p>
+
+            </div>
+            <a href="about.html" target="_blank"> <img id="img1" loading="lazy"
+                    src="https://img.freepik.com/premium-photo/anime-men-with-glasses_397139-6114.jpg" alt="My Image">
+            </a>
+
+        </div>
+        <div id="blogfeed">
+            <h2>Blog Feed</h2>
+        </div>
+        <div class="blogdiv">
+            <div class="blog1">
+                <a href="#"><img
+                        src="https://cdn.prod.website-files.com/62196607bf1b46c300301846/6568ae48f9b9773b5022ede1_r4jzjegdg71u9g7az4xf.webp"
+                        alt="presentation img"></a>
+                <p>Prashantkumar555811</p>
+                <h4 class="bloghead">
+                    <a href="#">Expanding Your Online Presentation</a>
+                </h4>
+                <p class="blogdescrip">
+                    In today's digital age, having a strong online presence is crucial for professionals looking to
+                    showcase their expertise and attract...
+                </p>
+                <hr>
+                <div class="symbol">
+                    <img id="blogfotterimag"
+                        src="https://thumbs.dreamstime.com/z/eye-icon-vector-illustration-eye-icon-vector-illustration-symbol-eye-flat-design-125611189.jpg"
+                        alt="Views icon">
+                    <img id="blogfotterimag2" src="https://purepng.com/public/uploads/medium/red-outline-heart-4xz.png"
+                        alt="likes image">
+                </div>
+            </div>
+
+            <div class="blog1">
+                <a href="#"><img
+                        src="https://cdn.prod.website-files.com/62196607bf1b46c300301846/6568ae48f9b9773b5022ede1_r4jzjegdg71u9g7az4xf.webp"
+                        alt="presentation img"></a>
+                <p>Prashantkumar555811</p>
+                <h4 class="bloghead">
+                    <a href="#">Expanding Your Online Presentation</a>
+                </h4>
+                <p class="blogdescrip">
+                    In today's digital age, having a strong online presence is crucial for professionals looking to
+                    showcase their expertise and attract...
+                </p>
+                <hr>
+                <div class="symbol">
+                    <img id="blogfotterimag"
+                        src="https://thumbs.dreamstime.com/z/eye-icon-vector-illustration-eye-icon-vector-illustration-symbol-eye-flat-design-125611189.jpg"
+                        alt="Views icon">
+                    <img id="blogfotterimag2" src="https://purepng.com/public/uploads/medium/red-outline-heart-4xz.png"
+                        alt="likes image">
+                </div>
+            </div>
+
+            <div class="blog1">
+                <a href="#">
+                    <img src="https://cdn.prod.website-files.com/62196607bf1b46c300301846/6568ae48f9b9773b5022ede1_r4jzjegdg71u9g7az4xf.webp"
+                        alt="presentation img"></a>
+                <p>Prashantkumar555811</p>
+                <h4 class="bloghead">
+                    <a href="#">Expanding Your Online Presentation</a>
+                </h4>
+                <p class="blogdescrip">
+                    In today's digital age, having a strong online presence is crucial for professionals looking to
+                    showcase their expertise and attract...
+                </p>
+                <hr>
+                <div class="symbol">
+                    <img id="blogfotterimag"
+                        src="https://thumbs.dreamstime.com/z/eye-icon-vector-illustration-eye-icon-vector-illustration-symbol-eye-flat-design-125611189.jpg"
+                        alt="views image">
+                    <img id="blogfotterimag2" src="https://purepng.com/public/uploads/medium/red-outline-heart-4xz.png"
+                        alt="likes image">
+                </div>
+            </div>
+            <div class="blog1">
+                <a href="#"><img
+                        src="https://cdn.prod.website-files.com/62196607bf1b46c300301846/6568ae48f9b9773b5022ede1_r4jzjegdg71u9g7az4xf.webp"
+                        alt="presentation img"></a>
+                <p>Prashantkumar555811</p>
+                <h4 class="bloghead">
+                    <a href="#">Expanding Your Online Presentation</a>
+                </h4>
+                <p class="blogdescrip">
+                    In today's digital age, having a strong online presence is crucial for professionals looking to
+                    showcase their expertise and attract...
+                </p>
+                <hr>
+                <div class="symbol">
+                    <img id="blogfotterimag"
+                        src="https://thumbs.dreamstime.com/z/eye-icon-vector-illustration-eye-icon-vector-illustration-symbol-eye-flat-design-125611189.jpg"
+                        alt="views img">
+                    <img id="blogfotterimag2" src="https://purepng.com/public/uploads/medium/red-outline-heart-4xz.png"
+                        alt="views img">
+                </div>
+            </div>
+        </div>
+        <div id="mygsapportfolio">
+            <h4>My Portfolio</h4>
+        </div>
+        <div id="portfolioheading">
+            <h3>My Projects</h3>
+        </div>
+        <div id="portdiv">
+            <p id="portfoliopara">Welcome to my portfolio. Here you’ll find a selection of my work. Explore my projects
+                to learn more about
+                what I do.</p>
+        </div>
+        <div class="featured-work">
+            <div class="workimg1">
+                <h5 id="projecttitle">To Do WebSite</h5>
+                <a href="https://mytodowebsite1.netlify.app/" target="_blank"><img
+                        src="https://lh3.googleusercontent.com/d/1CmiBr_nWPmV7tHog6Y9APcJHyGGuDi2Q=w1000-h350"
+                        alt="Google Drive ToDo WebSite image"></a>
+            </div>
+            <div class="workimg2"> <img
+                    src="https://img.freepik.com/premium-psd/dark-phone-screen-mockup_268120-7.jpg?w=900" alt="img">
+                <h5 id="projecttitle">project Title</h5>
+            </div>
+            <div class="workimg3">
+                <h5 id="projecttitle">project Title</h5>
+                <img src="https://img.freepik.com/premium-psd/dark-phone-screen-mockup_268120-7.jpg?w=900" alt="img">
+            </div>
+            <div class="workimg4"> <img
+                    src="https://img.freepik.com/premium-psd/dark-phone-screen-mockup_268120-7.jpg?w=900" alt="img">
+                <h5 id="projecttitle">project Title</h5>
+            </div>
+        </div>
+        <h1 class="title">Social Media</h1>
+        <div class="gallery">
+            <div class="work">
+                <img src="https://th.bing.com/th/id/OIP.WyWwCGt5arX2JFdYKmY0RAHaE8?rs=1&pid=ImgDetMain"
+                    alt="Smiling Woman">
+                <div class="icon">📷</div>
+                <div class="overlay">Click Me</div>
+            </div>
+            <div class="work">
+                <img src="https://th.bing.com/th/id/OIP.WyWwCGt5arX2JFdYKmY0RAHaE8?rs=1&pid=ImgDetMain" alt="Airplane">
+                <div class="icon">🎬</div>
+                <div class="overlay">Click Me</div>
+            </div>
+            <div class="work">
+                <img src="https://th.bing.com/th/id/OIP.WyWwCGt5arX2JFdYKmY0RAHaE8?rs=1&pid=ImgDetMain" alt="Leaf">
+                <div class="overlay">Click Me</div>
+            </div>
+            <div class="work">
+                <img src="https://th.bing.com/th/id/OIP.WyWwCGt5arX2JFdYKmY0RAHaE8?rs=1&pid=ImgDetMain"
+                    alt="Shaving Products">
+                <div class="icon">🛍️</div>
+                <div class="overlay">Click Me</div>
+            </div>
+            <div class="work">
+                <img src="https://th.bing.com/th/id/OIP.WyWwCGt5arX2JFdYKmY0RAHaE8?rs=1&pid=ImgDetMain"
+                    alt="Shaving Products">
+                <div class="icon">🛍️</div>
+                <div class="overlay">Click Me</div>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <div class="container">
+            <div class="contact-section">
+                <div class="contact-info">
+                    <h2>Contact</h2>
+                    <p>📍 500 Terry Francine St., San Francisco, CA 94158</p>
+                    <p>📞 123-456-7890</p>
+                    <p>📧 info@mysite.com</p>
+                </div>
+                <div class="contact-form">
+                    <form id="form">
+                        <input id="firstname" type="text" placeholder="First Name" required>
+                        <input id="lastname" type="text" placeholder="Last Name" required>
+                        <input id="email" type="email" placeholder="Email" required>
+                        <textarea id="message" rows="4" placeholder="Message"></textarea>
+                        <button id="btn" type="button">Send</button>
+                    </form>
+                </div>
+            </div>
+            <div class="map-container">
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.536005676037!2d-122.41941518468147!3d37.77492957975906!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8085809c5cba08fd%3A0xada46cace9c2517c!2sSan%20Francisco%2C%20CA%2C%20USA!5e0!3m2!1sen!2sus!4v1616127361966!5m2!1sen!2sus"
+                    width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+            </div>
+        </div>
+    </footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"
+        integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"
+        integrity="sha512-onMTRKJBKz8M1TnqqDuGBlowlH0ohFzMXYRNebz+yOcc5TQr/zAKsthzhuv0hiyUKEiQEQXEynnXCvNTOk50dg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="scripts.js" defer></script>
+</body>
+
+</html>
